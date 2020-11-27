@@ -1,0 +1,64 @@
+@import '~@/components/style/index.less';
+
+.sections {
+  .section {
+    padding-top: 80px;
+    &:nth-child(even) {
+      background-color: #fff;
+    }
+  }
+}
+
+.section {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+.sectionContent {
+  margin-top: 48px;
+}
+
+.headline {
+  .title {
+    font-size: 24px;
+    line-height: 33px;
+  }
+  .subtitle {
+    margin-top: 1px;
+    color: #b3b3b3;
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+.more {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 188px;
+  height: 44px;
+  margin: 40px auto 0;
+  color: #666;
+  border: 1px solid #ebebeb;
+  cursor: pointer;
+  transition: @animation-duration-base;
+  &:hover {
+    color: transparent;
+    background-color: @primary-color;
+    .arrow {
+      opacity: 1;
+    }
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity @animation-duration-base;
+  }
+}

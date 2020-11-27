@@ -1,0 +1,67 @@
+@import '~@/components/style/index.less';
+
+@prefixCls: course-card;
+
+.@{prefixCls} {
+  background-color: #fff;
+  transition: all @animation-duration-slow ease-out 0s;
+  user-select: none;
+  &:not(.@{prefixCls}-loader) {
+    cursor: pointer;
+    &:hover,
+    &:active {
+      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+
+  &-cover {
+    height: 140px;
+    background: #e0e0e0 center no-repeat;
+    background-size: cover;
+  }
+
+  &-content {
+    padding: 20px 16px 18px;
+  }
+  &-title {
+    height: 48px;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    -webkit-line-clamp: 2;
+  }
+  &-details {
+    color: #666;
+    font-size: 12px;
+  }
+
+  &-price {
+    color: @warning-color;
+  }
+
+  &-unit {
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: top;
+  }
+
+  &-amount {
+    font-weight: 500;
+    font-size: 20px;
+    font-family: DIN;
+    line-height: 24px;
+  }
+
+  &-free {
+    color: @primary-color;
+    font-size: 16px;
+  }
+
+  &-extra {
+    color: #b3b3b3;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "short_name": "爱家继续教育",
+  "display": "standalone"
+}

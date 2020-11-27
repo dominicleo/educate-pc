@@ -1,0 +1,41 @@
+@import '~@/components/style/index.less';
+
+.wrapper {
+  white-space: nowrap;
+  background-color: #fff;
+  transition: box-shadow @animation-duration-base ease-out;
+  &.affixed {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+  }
+}
+
+.header {
+  height: 84px;
+  :global {
+    .ant-menu-horizontal {
+      border-bottom: 0;
+      a {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.logo {
+  width: 180px;
+  height: 32px;
+  margin: 2px 0;
+  font-size: 0;
+  background: url('~@/assets/images/logo.svg') center no-repeat;
+  background-size: contain;
+  display: block;
+}
+
+.search {
+  :global {
+    .ant-input-prefix {
+      color: #696969;
+      font-size: 20px;
+    }
+  }
+}

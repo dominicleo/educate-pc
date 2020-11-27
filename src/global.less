@@ -1,0 +1,17 @@
+@font-face {
+  font-family: DIN;
+  src: url('~@/assets/fonts/DIN-Regular.ttf') format('truetype');
+}
+
+body {
+  touch-action: manipulation;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ellipsis-multiple-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

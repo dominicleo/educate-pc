@@ -1,0 +1,16 @@
+@import '~@/components/style/index.less';
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  transition: @animation-duration-base;
+}
+
+@media (max-width: @screen-lg-max + @margin-lg) {
+  .container {
+    padding-right: @margin-lg;
+    padding-left: @margin-lg;
+  }
+}

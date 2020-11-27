@@ -1,0 +1,31 @@
+@import '~@/components/style/index.less';
+
+.banner {
+  position: relative;
+  z-index: 2;
+  height: 400px;
+  background: linear-gradient(
+    180deg,
+    @skeleton-to-color 0%,
+    @skeleton-color 100%
+  );
+  :global {
+    .ant-carousel .slick-dots-bottom {
+      bottom: 50px;
+    }
+  }
+}
+
+.bannerItem {
+  height: 400px;
+  background: center no-repeat;
+  background-size: contain;
+}
+
+.loading {
+  :global {
+    .ant-spin-show-text {
+      color: #bbb;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import '~@/components/style/index.less';
+
+.layout {
+  min-height: 100vh;
+  background: url('./images/bg-top.png') right top no-repeat,
+    url('./images/bg-bottom.png') left bottom no-repeat;
+  background-color: #f5fbff;
+  background-size: auto 252px;
+}
+
+.header {
+  padding: 30px 48px;
+}
+
+.logo {
+  display: block;
+  width: 200px;
+  height: 44px;
+  margin: 40px auto 48px;
+  background: url('~@/assets/images/logo.svg') center no-repeat;
+  background-size: contain;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  box-sizing: border-box;
+  width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  :global {
+    .ant-card-head {
+      min-height: auto;
+      padding-top: 36px;
+      border-bottom: none;
+    }
+    .ant-card-body {
+      padding: 32px 40px 40px;
+    }
+    .ant-tabs-nav-list {
+      margin: 0 auto;
+    }
+    .ant-tabs-top > .ant-tabs-nav::before {
+      border-bottom: none;
+    }
+    .ant-tabs-large > .ant-tabs-nav .ant-tabs-tab {
+      padding: 4px 0;
+      font-size: 20px;
+    }
+    .ant-tabs-tab {
+      margin-right: 0;
+      + .ant-tabs-tab {
+        margin-left: 95px;
+      }
+    }
+    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: @text-color;
+    }
+  }
+}
