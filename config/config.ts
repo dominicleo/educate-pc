@@ -13,9 +13,7 @@ const THEME_CONTENT = fs.readFileSync(THEME_PATH, 'utf-8');
 const THEME = lessVarsToJs(THEME_CONTENT);
 
 export default defineConfig({
-  ssr: {
-    devServerRender: false,
-  },
+  ssr: {},
   define: {
     'process.env.APP_ENV': process.env.APP_ENV || 'development',
   },
@@ -38,4 +36,42 @@ export default defineConfig({
   },
   theme: THEME,
   plugins: [resolvePath('config/plugins/generate')],
+  hash: true,
+  chunks: ['styles', 'umi', 'common'],
+  chainWebpack: (config) => {
+    config.merge({
+      optimization: {
+        minimize: true,
+        splitChunks: {
+          chunks: 'all',
+          minChunks: 2,
+          automaticNameDelimiter: '.',
+          cacheGroups: {
+            styles: {
+              name: 'styles',
+              chunks: 'all',
+              test: /\.(less|css)$/,
+              minChunks: 1,
+              minSize: 0,
+              priority: 120,
+              reuseExistingChunk: true,
+              enforce: true,
+            },
+
+            common: {
+              name: 'common',
+              minChunks: 1,
+              test({ resource }) {
+                return (
+                  /[\\/]node_modules[\\/](antd|@ant-design)/.test(resource) ||
+                  /[\\/]src[\\/](layouts|components|utils)/.test(resource)
+                );
+              },
+              priority: 10,
+            },
+          },
+        },
+      },
+    });
+  },
 });
